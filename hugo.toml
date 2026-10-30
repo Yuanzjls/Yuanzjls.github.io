@@ -1,0 +1,107 @@
+baseURL = 'https://yuanzjls.github.io/'
+title = "Scott's Blog"
+theme = 'PaperMod'
+
+# Chinese lives at the site root, English under /en/
+defaultContentLanguage = 'zh'
+defaultContentLanguageInSubdir = false
+hasCJKLanguage = true
+enableRobotsTXT = true
+
+[pagination]
+  pagerSize = 10
+
+# JSON output powers the search page
+[outputs]
+  home = ['HTML', 'RSS', 'JSON']
+
+[params]
+  defaultTheme = 'auto'
+  ShowReadingTime = true
+  ShowCodeCopyButtons = true
+  ShowBreadCrumbs = true
+  ShowPostNavLinks = true
+  ShowToc = false
+  displayFullLangName = true
+
+  # Search the whole post, not just the start of it
+  [params.fuseOpts]
+    ignorelocation = true
+    threshold = 0.3
+    keys = ['title', 'summary', 'content']
+
+  [[params.socialIcons]]
+    name = 'github'
+    url = 'https://github.com/Yuanzjls'
+
+  [[params.socialIcons]]
+    name = 'rss'
+    url = 'index.xml'
+
+[languages.zh]
+  contentDir = 'content/zh'
+  label = '中文'
+  locale = 'zh-CN'
+  title = 'Scott 的博客'
+  weight = 1
+
+  [languages.zh.params]
+    description = 'Scott 的个人博客'
+
+    [languages.zh.params.homeInfoParams]
+      Title = '你好 👋'
+      Content = '欢迎来到我的个人博客。'
+
+  [[languages.zh.menus.main]]
+    name = '归档'
+    pageRef = '/archives'
+    weight = 10
+
+  [[languages.zh.menus.main]]
+    name = '标签'
+    pageRef = '/tags'
+    weight = 20
+
+  [[languages.zh.menus.main]]
+    name = '搜索'
+    pageRef = '/search'
+    weight = 30
+
+  [[languages.zh.menus.main]]
+    name = '关于'
+    pageRef = '/about'
+    weight = 40
+
+[languages.en]
+  contentDir = 'content/en'
+  label = 'English'
+  locale = 'en-US'
+  title = "Scott's Blog"
+  weight = 2
+
+  [languages.en.params]
+    description = "Scott's personal blog"
+
+    [languages.en.params.homeInfoParams]
+      Title = 'Hi there 👋'
+      Content = 'Welcome to my personal blog.'
+
+  [[languages.en.menus.main]]
+    name = 'Archives'
+    pageRef = '/archives'
+    weight = 10
+
+  [[languages.en.menus.main]]
+    name = 'Tags'
+    pageRef = '/tags'
+    weight = 20
+
+  [[languages.en.menus.main]]
+    name = 'Search'
+    pageRef = '/search'
+    weight = 30
+
+  [[languages.en.menus.main]]
+    name = 'About'
+    pageRef = '/about'
+    weight = 40

@@ -1,0 +1,102 @@
+media:
+  input: static/images
+  output: /images
+
+content:
+  - name: posts-zh
+    label: 博客文章（中文）
+    type: collection
+    path: content/zh/posts
+    view:
+      primary: title
+      fields: [title, date, draft]
+      sort: date
+      order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: draft
+        label: Draft
+        type: boolean
+        default: false
+      - name: description
+        label: Description
+        type: string
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+      - name: translationKey
+        label: Translation key (use the same value on both language versions)
+        type: string
+      - name: body
+        label: Body
+        type: rich-text
+
+  - name: posts-en
+    label: Blog posts (English)
+    type: collection
+    path: content/en/posts
+    view:
+      primary: title
+      fields: [title, date, draft]
+      sort: date
+      order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: draft
+        label: Draft
+        type: boolean
+        default: false
+      - name: description
+        label: Description
+        type: string
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+      - name: translationKey
+        label: Translation key (use the same value on both language versions)
+        type: string
+      - name: body
+        label: Body
+        type: rich-text
+
+  - name: about-zh
+    label: 关于页面（中文）
+    type: file
+    path: content/zh/about.md
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: body
+        label: Body
+        type: rich-text
+
+  - name: about-en
+    label: About page (English)
+    type: file
+    path: content/en/about.md
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: body
+        label: Body
+        type: rich-text
